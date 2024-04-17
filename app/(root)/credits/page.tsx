@@ -17,10 +17,7 @@ const Credits = async () => {
 
   return (
     <>
-      <Header
-        title="Buy Credits"
-        subtitle="Choose a credit package that suits your needs!"
-      />
+      <Header title="Buy Credits" subtitle="Choose your plan" />
 
       <section>
         <ul className="credits-list">
@@ -28,9 +25,7 @@ const Credits = async () => {
             <li key={plan.name} className="credits-item">
               <div className="flex-center flex-col gap-3">
                 <Image src={plan.icon} alt="check" width={50} height={50} />
-                <p className="p-20-semibold mt-2 text-purple-500">
-                  {plan.name}
-                </p>
+                <p className="p-20-semibold mt-2 text-blue-600">{plan.name}</p>
                 <p className="h1-semibold text-dark-600">${plan.price}</p>
                 <p className="p-16-regular">{plan.credits} Credits</p>
               </div>
@@ -60,14 +55,14 @@ const Credits = async () => {
                   Free Consumable
                 </Button>
               ) : (
-                <SignedIn>
-                  <Checkout
-                    plan={plan.name}
-                    amount={plan.price}
-                    credits={plan.credits}
-                    buyerId={user._id}
-                  />
-                </SignedIn>
+                // <SignedIn>
+                <Checkout
+                  plan={plan.name}
+                  amount={plan.price}
+                  credits={plan.credits}
+                  buyerId={user._id}
+                />
+                // </SignedIn>
               )}
             </li>
           ))}

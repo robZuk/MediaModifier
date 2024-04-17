@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
 
-const IBMPlex = IBM_Plex_Sans({
+const OpenSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-ibm-plex",
@@ -24,11 +24,11 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        variables: { colorPrimary: "#624cf5" },
+        variables: { colorPrimary: "#91C3FD" },
       }}
     >
       <html lang="en">
-        <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
+        <body className={cn("font-OpenSans antialiased", OpenSans.variable)}>
           {children}
         </body>
       </html>

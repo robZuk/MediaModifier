@@ -2,42 +2,42 @@ export const navLinks = [
   {
     label: "Home",
     route: "/",
-    icon: "/assets/icons/home.svg",
+    icon: "Home",
   },
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
-    icon: "/assets/icons/image.svg",
+    icon: "ImageUp",
   },
   {
     label: "Generative Fill",
     route: "/transformations/add/fill",
-    icon: "/assets/icons/stars.svg",
+    icon: "PaintBucket",
   },
   {
     label: "Object Remove",
     route: "/transformations/add/remove",
-    icon: "/assets/icons/scan.svg",
+    icon: "PackageX",
   },
   {
     label: "Object Recolor",
     route: "/transformations/add/recolor",
-    icon: "/assets/icons/filter.svg",
+    icon: "Blend",
   },
   {
     label: "Background Remove",
     route: "/transformations/add/removeBackground",
-    icon: "/assets/icons/camera.svg",
+    icon: "Palette",
   },
   {
     label: "Profile",
     route: "/profile",
-    icon: "/assets/icons/profile.svg",
+    icon: "User",
   },
   {
     label: "Buy Credits",
     route: "/credits",
-    icon: "/assets/icons/bag.svg",
+    icon: "Coins",
   },
 ];
 
@@ -71,7 +71,7 @@ export const plans = [
     _id: 2,
     name: "Pro Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 40,
+    price: 20,
     credits: 120,
     inclusions: [
       {
@@ -96,7 +96,7 @@ export const plans = [
     _id: 3,
     name: "Premium Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 199,
+    price: 80,
     credits: 2000,
     inclusions: [
       {
@@ -122,29 +122,29 @@ export const plans = [
 export const transformationTypes = {
   restore: {
     type: "restore",
-    title: "Restore Image",
-    subTitle: "Refine images by removing noise and imperfections",
+    title: "Image Restore",
+    subTitle: "Sharpen blurry photos",
     config: { restore: true },
     icon: "image.svg",
   },
   removeBackground: {
     type: "removeBackground",
-    title: "Background Remove",
-    subTitle: "Removes the background of the image using AI",
+    title: "Remove Background ",
+    subTitle: "Remove the background of the image",
     config: { removeBackground: true },
     icon: "camera.svg",
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
-    subTitle: "Enhance an image's dimensions using AI outpainting",
+    subTitle: "Enhance scope of your image",
     config: { fillBackground: true },
     icon: "stars.svg",
   },
   remove: {
     type: "remove",
-    title: "Object Remove",
-    subTitle: "Identify and eliminate objects from images",
+    title: "Remove Object",
+    subTitle: "Remove the object from from image",
     config: {
       remove: { prompt: "", removeShadow: true, multiple: true },
     },
@@ -152,8 +152,8 @@ export const transformationTypes = {
   },
   recolor: {
     type: "recolor",
-    title: "Object Recolor",
-    subTitle: "Identify and recolor objects from the image",
+    title: "Recolor Object",
+    subTitle: "Recolor object from the image",
     config: {
       recolor: { prompt: "", to: "", multiple: true },
     },

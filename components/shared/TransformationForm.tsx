@@ -72,6 +72,7 @@ const TransformationForm = ({
   config = null,
 }: TransformationFormProps) => {
   const transformationType = transformationTypes[type];
+  const [title, setTitle] = useState("");
   const [image, setImage] = useState(data);
   const [newTransformation, setNewTransformation] =
     useState<Transformations | null>(null);
@@ -81,7 +82,8 @@ const TransformationForm = ({
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  // console.log(action);
+  console.log(newTransformation);
+
   const initialValues =
     data && action === "Update"
       ? {
@@ -234,7 +236,24 @@ const TransformationForm = ({
           name="title"
           formLabel="Image Title"
           className="w-full"
-          render={({ field }) => <Input {...field} className="input-field" />}
+          render={({ field }) => (
+            <Input
+              {...field}
+              className="input-field"
+              onChange={(e) => {
+                setTitle(e.target.value);
+                field.onChange(e);
+              }}
+              // onChange={(e) =>
+              //   onInputChangeHandler(
+              //     "title",
+              //     e.target.value,
+              //     type,
+              //     field.onChange
+              //   )
+              // }
+            />
+          )}
         />
 
         {type === "fill" && (
@@ -341,7 +360,7 @@ const TransformationForm = ({
           />
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 max-w-[300px]">
           <Button
             type="button"
             className="submit-button capitalize"

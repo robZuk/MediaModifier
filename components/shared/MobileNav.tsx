@@ -1,85 +1,131 @@
-"use client"
+"use client";
+import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { navLinks } from "@/constants";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
+import { Menu } from "lucide-react";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { navLinks } from "@/constants"
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "../ui/button"
+import { cn } from "@/lib/utils";
+import { icons } from "lucide-react";
 
 const MobileNav = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  // const onClick = () => {
+
+  // setOpen(false); // close sidebar on mobile
+  // };
 
   return (
     <header className="header">
       <Link href="/" className="flex items-center gap-2 md:py-2">
-        <Image
-          src="/assets/images/logo-text.svg"
-          alt="logo"
-          width={180}
-          height={28}
-        />
+        <Image src="/logo.png" alt="logo" width={110} height={20} />
       </Link>
 
       <nav className="flex gap-2">
         <SignedIn>
           <UserButton afterSignOutUrl="/" />
 
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger>
-              <Image 
+              <Menu />
+              {/* <Image
                 src="/assets/icons/menu.svg"
                 alt="menu"
                 width={32}
                 height={32}
                 className="cursor-pointer"
-              />
+              /> */}
             </SheetTrigger>
-            <SheetContent className="sheet-content sm:w-64">
-              <>
-                <Image 
-                  src="/assets/images/logo-text.svg"
-                  alt="logo"
-                  width={152}
-                  height={23}
-                />
+            <SheetContent className="sm:w-64 bg-primary p-0 overflow-y-scroll">
+              {/* <SheetContext.Provider value={setOpen}> */}
+              <Image src="/logo.png" alt="logo" width={110} height={20} />
+              <nav className="flex flex-col justify-between">
+                {/* <SignedIn> */}
+                <ul className="w-full flex-col items-start gap-2">
+                  {navLinks.slice(0, 6).map((link) => {
+                    const isActive = link.route === pathname;
+                    const Icon = ({ name, color, size }: any) => {
+                      const LucideIcon = icons[name as keyof typeof icons];
+                      return <LucideIcon color={color} size={size} />;
+                    };
 
-              <ul className="header-nav_elements">
-              {navLinks.map((link) => {
-                const isActive = link.route === pathname
+                    return (
+                      <li
+                        key={link.route}
+                        className={cn(
+                          "flex items-center gap-x-2 text-sm text-gray-900 transition-all  hover:bg-slate-100/50 hover-text-muted w-full",
+                          isActive && "bg-slate-100/40 hover:bg-slate-100/40"
+                        )}
+                      >
+                        <Link
+                          className="p-16-semibold flex size-full gap-4 p-4"
+                          href={link.route}
+                          onClick={() => setOpen(false)}
+                        >
+                          <Icon
+                            name={link.icon}
+                            size={24}
+                            color={isActive ? "white" : "black"}
+                          />
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
 
-                return (
-                  <li 
-                    className={`${isActive && 'gradient-text'} p-18 flex whitespace-nowrap text-dark-700`}
-                    key={link.route}
-                    >
-                    <Link className="sidebar-link cursor-pointer" href={link.route}>
-                      <Image 
-                        src={link.icon}
-                        alt="logo"
-                        width={24}
-                        height={24}
-                      />
-                      {link.label}
-                    </Link>
-                  </li>
-                )
-              })}
-              </ul>
-              </>
+                <ul className="w-full flex flex-col items-start gap-2 pt-12">
+                  {navLinks.slice(6).map((link) => {
+                    const isActive = link.route === pathname;
+                    const Icon = ({ name, color, size }: any) => {
+                      const LucideIcon = icons[name as keyof typeof icons];
+                      return <LucideIcon color={color} size={size} />;
+                    };
+
+                    return (
+                      <li
+                        key={link.route}
+                        className={cn(
+                          "flex items-center gap-x-2 text-sm text-gray-900 transition-all  hover:bg-slate-100/50 hover-text-muted w-full",
+                          isActive && "bg-slate-100/40 hover:bg-slate-100/40"
+                        )}
+                      >
+                        <Link
+                          className="p-16-semibold flex size-full gap-4 p-4"
+                          href={link.route}
+                          onClick={() => setOpen(false)}
+                        >
+                          <Icon
+                            name={link.icon}
+                            size={24}
+                            color={isActive ? "white" : "black"}
+                          />
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+              {/* </SheetContext.Provider> */}
             </SheetContent>
           </Sheet>
         </SignedIn>
 
         <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-in">Login</Link>
-            </Button>
-          </SignedOut>
+          <Button asChild className="button bg-purple-gradient bg-cover">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </SignedOut>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;

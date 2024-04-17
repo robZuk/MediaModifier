@@ -28,6 +28,7 @@ const Checkout = ({
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
+    console.log(query);
     if (query.get("success")) {
       toast({
         title: "Order placed!",
@@ -45,7 +46,7 @@ const Checkout = ({
         className: "error-toast",
       });
     }
-  }, []);
+  }, [toast]);
 
   const onCheckout = async () => {
     const transaction = {
