@@ -14,9 +14,9 @@ const TransactionSchema = new Schema({
     type: Number,
     required: true,
   },
-  plan: {
-    type: String,
-  },
+  // plan: {
+  //   type: String,
+  // },
   credits: {
     type: Number,
   },
@@ -26,6 +26,7 @@ const TransactionSchema = new Schema({
   },
 });
 
-const Transaction = models?.Transaction || model("Transaction", TransactionSchema);
+const Transaction =
+  models?.Transaction || model("Transaction", TransactionSchema);
 
 export default Transaction;
