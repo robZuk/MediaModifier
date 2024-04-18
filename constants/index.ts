@@ -44,77 +44,77 @@ export const navLinks = [
 export const plans = [
   {
     _id: 1,
-    name: "Free",
+    name: "Basic Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 0,
-    credits: 20,
+    price: 20,
+    credits: 40,
     inclusions: [
-      {
-        label: "20 Free Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Basic Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: false,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: false,
-      },
+      // {
+      //   label: "40  Credits",
+      //   // isIncluded: true,
+      // },
+      // {
+      //   label: "Basic Access to Services",
+      //   isIncluded: true,
+      // },
+      // {
+      //   label: "Priority Customer Support",
+      //   isIncluded: false,
+      // },
+      // {
+      //   label: "Priority Updates",
+      //   isIncluded: false,
+      // },
     ],
   },
   {
     _id: 2,
     name: "Pro Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 20,
+    price: 40,
     credits: 120,
     inclusions: [
-      {
-        label: "120 Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Full Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: false,
-      },
+      // {
+      //   label: "120 Credits",
+      //   // isIncluded: true,
+      // },
+      // {
+      //   label: "Full Access to Services",
+      //   isIncluded: true,
+      // },
+      // {
+      //   label: "Priority Customer Support",
+      //   isIncluded: true,
+      // },
+      // {
+      //   label: "Priority Updates",
+      //   isIncluded: false,
+      // },
     ],
   },
   {
     _id: 3,
     name: "Premium Package",
     icon: "/assets/icons/free-plan.svg",
-    price: 80,
-    credits: 2000,
+    price: 60,
+    credits: 350,
     inclusions: [
-      {
-        label: "2000 Credits",
-        isIncluded: true,
-      },
-      {
-        label: "Full Access to Services",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Customer Support",
-        isIncluded: true,
-      },
-      {
-        label: "Priority Updates",
-        isIncluded: true,
-      },
+      // {
+      //   label: "350 Credits",
+      //   // isIncluded: true,
+      // },
+      // {
+      //   label: "Full Access to Services",
+      //   isIncluded: true,
+      // },
+      // {
+      //   label: "Priority Customer Support",
+      //   isIncluded: true,
+      // },
+      // {
+      //   label: "Priority Updates",
+      //   isIncluded: true,
+      // },
     ],
   },
 ];

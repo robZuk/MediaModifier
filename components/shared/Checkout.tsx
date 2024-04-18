@@ -29,6 +29,7 @@ const Checkout = ({
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
     console.log(query);
+    console.log(plan);
     if (query.get("success")) {
       toast({
         title: "Order placed!",
@@ -65,7 +66,7 @@ const Checkout = ({
         <Button
           type="submit"
           role="link"
-          className="w-full rounded-full bg-purple-gradient bg-cover"
+          className="w-full rounded-full bg-blue-300 border bg-cover"
         >
           Buy Credit
         </Button>

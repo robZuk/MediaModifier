@@ -17,7 +17,7 @@ const Credits = async () => {
 
   return (
     <>
-      <Header title="Buy Credits" subtitle="Choose your plan" />
+      <Header title="Buy Credits" subtitle="Choose your package" />
 
       <section>
         <ul className="credits-list">
@@ -32,7 +32,7 @@ const Credits = async () => {
 
               {/* Inclusions */}
               <ul className="flex flex-col gap-5 py-9">
-                {plan.inclusions.map((inclusion) => (
+                {/* {plan.inclusions.map((inclusion) => (
                   <li
                     key={plan.name + inclusion.label}
                     className="flex items-center gap-4"
@@ -47,23 +47,23 @@ const Credits = async () => {
                     />
                     <p className="p-16-regular">{inclusion.label}</p>
                   </li>
-                ))}
+                ))} */}
               </ul>
 
-              {plan.name === "Free" ? (
+              {/* {plan.name === "Free" ? (
                 <Button variant="outline" className="credits-btn">
                   Free Consumable
                 </Button>
-              ) : (
-                // <SignedIn>
+              ) : ( */}
+              <SignedIn>
                 <Checkout
                   plan={plan.name}
                   amount={plan.price}
                   credits={plan.credits}
                   buyerId={user._id}
                 />
-                // </SignedIn>
-              )}
+              </SignedIn>
+              {/* )} */}
             </li>
           ))}
         </ul>
