@@ -83,7 +83,7 @@ declare type CreateTransactionParams = {
   stripeId: string;
   amount: number;
   credits: number;
-  plan: string;
+  // plan: string;
   buyerId: string;
   createdAt: Date;
 };
