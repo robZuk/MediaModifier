@@ -9,10 +9,10 @@
 ### Technologies
 
 - TypeScript
-- React 18
-- Next.js 14
+- React 
+- Next.js 
 - Tailwind
-- React Hook Form 7
+- React Hook Form
 - MongoDB
 - Mongoose
 - Stripe
