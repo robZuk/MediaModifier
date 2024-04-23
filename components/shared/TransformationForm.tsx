@@ -82,8 +82,6 @@ const TransformationForm = ({
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  console.log(newTransformation);
-
   const initialValues =
     data && action === "Update"
       ? {
@@ -220,6 +218,7 @@ const TransformationForm = ({
     });
   };
 
+  console.log(transformationConfig);
   useEffect(() => {
     if (image && (type === "restore" || type === "removeBackground")) {
       setNewTransformation(transformationType.config);
@@ -231,6 +230,7 @@ const TransformationForm = ({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
+
         <CustomField
           control={form.control}
           name="title"

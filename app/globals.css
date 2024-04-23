@@ -104,7 +104,7 @@
   /* ===== TYPOGRAPHY */
   /* 44 */
   .h1-semibold {
-    @apply text-[36px] font-semibold sm:text-[44px] leading-[120%] sm:leading-[56px];
+    @apply text-[36px] font-bold sm:text-[44px] leading-[120%] sm:leading-[56px];
   }
 
   /* 36 */
@@ -214,11 +214,15 @@
 
   /* Home Page */
   .home {
-    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner;
+    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[8px] border  p-10 shadow-md shadow-purple-200/20 bg-gray-50;
   }
 
   .home-heading {
-    @apply h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply h1-semibold  flex-wrap text-center;
+  }
+
+  .home-description {
+    @apply p-16-medium  flex-wrap text-center;
   }
 
   /* Credits Page */
@@ -253,7 +257,7 @@
   }
 
   .transformation-original_image {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[16px] border border-dashed bg-purple-100/20 object-cover p-2;
   }
 
   /* Collection Component */
@@ -274,7 +278,7 @@
   }
 
   .collection-card {
-    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-purple-200/15 bg-white p-4 shadow-xl shadow-purple-200/10 transition-all hover:shadow-purple-200/20;
+    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[8px] border-2 border-purple-200/15 bg-white p-4 shadow-xl shadow-purple-200/10 transition-all hover:shadow-purple-200/20;
   }
 
   /* MediaUploader Component */
@@ -301,7 +305,7 @@
 
   /* Search Component */
   .search {
-    @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
+    @apply flex w-full rounded-[8px] border border-purple-200/20 bg-white px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
   }
 
   /* Sidebar Component */
@@ -321,7 +325,7 @@
   }
 
   .transformed-image {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[16px] border border-dashed bg-purple-100/20 object-cover p-2;
   }
 
   .transforming-loader {

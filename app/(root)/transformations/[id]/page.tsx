@@ -21,7 +21,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
       <section className="mt-5 flex flex-wrap gap-4">
         <div className="p-14-medium md:p-16-medium flex gap-2">
           <p className="text-dark-600">Transformation:</p>
-          <p className=" capitalize text-blue-500">
+          <p className=" capitalize text-blue-400">
             {image.transformationType}
           </p>
         </div>
@@ -41,7 +41,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
             <p className="hidden text-dark-400/50 md:block">&#x25CF;</p>
             <div className="p-14-medium md:p-16-medium flex gap-2">
               <p className="text-dark-600">Color:</p>
-              <p className=" capitalize text-purple-400">{image.color}</p>
+              <p className=" capitalize text-blue-400">{image.color}</p>
             </div>
           </>
         )}

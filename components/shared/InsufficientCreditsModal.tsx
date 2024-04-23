@@ -37,20 +37,19 @@ export const InsufficientCreditsModal = () => {
             </AlertDialogCancel>
           </div>
 
-          <Image
+          {/* <Image
             src="/assets/images/stacked-coins.png"
             alt="credit coins"
             width={462}
             height={122}
-          />
+          /> */}
 
           <AlertDialogTitle className="p-24-bold text-dark-600">
-            Oops.... Looks like you&#39;ve run out of free credits!
+            You&#39;ve run out of free credits!
           </AlertDialogTitle>
 
           <AlertDialogDescription className="p-16-regular py-3">
-            No worries, though - you can keep enjoying our services by grabbing
-            more credits.
+            Keep enjoying our services by grabbing more credits.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -61,7 +60,7 @@ export const InsufficientCreditsModal = () => {
             No, Cancel
           </AlertDialogCancel>
           <AlertDialogAction
-            className="button w-full bg-purple-gradient  bg-cover"
+            className="button w-full bg-blue-300  bg-cover border hover:bg-blue-400 "
             onClick={() => router.push("/credits")}
           >
             Yes, Proceed
