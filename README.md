@@ -1,4 +1,4 @@
-# Shoppingify
+# Media Modifier
 
 ### https://media-modifier.vercel.app/
 
