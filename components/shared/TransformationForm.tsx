@@ -198,7 +198,6 @@ const TransformationForm = ({
     }
   }, [image, transformationType.config, type]);
 
-  // console.log(image);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
