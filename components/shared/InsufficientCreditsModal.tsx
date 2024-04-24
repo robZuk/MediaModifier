@@ -36,14 +36,6 @@ export const InsufficientCreditsModal = () => {
               />
             </AlertDialogCancel>
           </div>
-
-          {/* <Image
-            src="/assets/images/stacked-coins.png"
-            alt="credit coins"
-            width={462}
-            height={122}
-          /> */}
-
           <AlertDialogTitle className="p-24-bold text-dark-600">
             You&#39;ve run out of free credits!
           </AlertDialogTitle>

@@ -14,9 +14,7 @@ const TransactionSchema = new Schema({
     type: Number,
     required: true,
   },
-  // plan: {
-  //   type: String,
-  // },
+
   credits: {
     type: Number,
   },

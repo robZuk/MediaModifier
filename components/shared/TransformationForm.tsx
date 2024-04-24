@@ -13,15 +13,7 @@ import {
 } from "@/components/ui/select";
 
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
   aspectRatioOptions,
@@ -48,21 +40,6 @@ export const formSchema = z.object({
   prompt: z.string().optional(),
   publicId: z.string(),
 });
-
-// {
-//   Object.keys(aspectRatioOptions).map((key) =>
-//     console.log(key, aspectRatioOptions[key as AspectRatioKey].label)
-//   );
-// }
-
-// {
-//   Object.keys(aspectRatioOptions).map((key) => (
-//     <SelectItem key={key} value={key} className="select-item">
-//       {aspectRatioOptions[key as AspectRatioKey].label}
-//     </SelectItem>
-//   ));
-// }
-
 const TransformationForm = ({
   action,
   data = null,
@@ -177,13 +154,9 @@ const TransformationForm = ({
       width: imageSize.width,
       height: imageSize.height,
     }));
-    // console.log(image);
-    // console.log(imageSize);
     setNewTransformation(transformationType.config);
     return onChangeField(value);
   };
-  // console.log(newTransformation);
-  // console.log(transformationConfig);
 
   const onInputChangeHandler = (
     fieldName: string,
@@ -244,14 +217,6 @@ const TransformationForm = ({
                 setTitle(e.target.value);
                 field.onChange(e);
               }}
-              // onChange={(e) =>
-              //   onInputChangeHandler(
-              //     "title",
-              //     e.target.value,
-              //     type,
-              //     field.onChange
-              //   )
-              // }
             />
           )}
         />

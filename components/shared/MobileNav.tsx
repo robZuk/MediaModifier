@@ -16,11 +16,6 @@ const MobileNav = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // const onClick = () => {
-
-  // setOpen(false); // close sidebar on mobile
-  // };
-
   return (
     <header className="header">
       <Link href="/" className="flex items-center gap-2 md:py-2">
@@ -34,13 +29,6 @@ const MobileNav = () => {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger>
               <Menu />
-              {/* <Image
-                src="/assets/icons/menu.svg"
-                alt="menu"
-                width={32}
-                height={32}
-                className="cursor-pointer"
-              /> */}
             </SheetTrigger>
             <SheetContent className="sm:w-64 bg-primary p-0 overflow-y-scroll">
               {/* <SheetContext.Provider value={setOpen}> */}
@@ -113,7 +101,6 @@ const MobileNav = () => {
                   })}
                 </ul>
               </nav>
-              {/* </SheetContext.Provider> */}
             </SheetContent>
           </Sheet>
         </SignedIn>

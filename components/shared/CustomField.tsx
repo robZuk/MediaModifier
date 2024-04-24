@@ -32,7 +32,6 @@ export const CustomField = ({
       control={control}
       name={name}
       render={({ field }) => {
-        // console.log(field);
         return (
           <FormItem className={className}>
             {formLabel && <FormLabel>{formLabel}</FormLabel>}
@@ -44,6 +43,3 @@ export const CustomField = ({
     />
   );
 };
-// />
-//   );
-// };

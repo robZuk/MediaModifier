@@ -22,13 +22,7 @@ const MediaUploader = ({
   type,
 }: MediaUploaderProps) => {
   const { toast } = useToast();
-  // console.log(publicId && getImageSize(type, image, "width"));
-  // console.log(publicId && getImageSize(type, image, "height"));
   const onUploadSuccessHandler = (result: any) => {
-    // console.log(result.info);
-    // console.log(result);
-    // console.log(image);
-
     setImage((prevState: any) => ({
       ...prevState,
       publicId: result?.info?.public_id,

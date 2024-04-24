@@ -39,10 +39,6 @@ export const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
           isActive && "bg-slate-100/50 hover:bg-slate-100/50"
         )}
       >
-        {/* <div className="flex items-center gap-x-2 py-4">
-          <Icon size={22} className={cn()} />
-          {label}
-        </div> */}
         <div
           className={cn(
             "ml-auto opacity-0 border-2 border-slate-600 h-full transition-all",
@@ -60,10 +56,6 @@ export const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
         isActive && "bg-slate-100/50 hover:bg-slate-100/50"
       )}
     >
-      {/* <div className="flex items-center gap-x-2 py-4">
-        <Icon size={22} className={cn()} />
-        {label}
-      </div> */}
       <div
         className={cn(
           "ml-auto opacity-0 border-2 border-slate-600 h-full transition-all",
